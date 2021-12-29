@@ -14,13 +14,20 @@ function App() {
   return (
     <React.Fragment>
       <Nav />
-    
-      <Route exact path="/" ><Search/></Route>
-      <Route path="/favoritos" component={Favoritos} />
-      <Route path="/contacto" component={Contacto} />
-      <Route path="/pelicula/:id" component={Pelicula} /> 
-      <Footer /> 
-      </React.Fragment>
+
+      <Route exact path="/">
+        <Search />
+      </Route>
+      <Route path="/favoritos">
+        <Favoritos />
+      </Route>
+
+      <Route path="/contacto">
+        <Contacto />
+      </Route>
+      <Route path="/pelicula/:id" component={Pelicula} />
+      <Footer />
+    </React.Fragment>
   );
 }
 

@@ -5,7 +5,7 @@ import React from "react";
 export default function Footer() {
   return (
     <div className="footer">
-      <h2>Footer</h2>
+      <h2>Cinex</h2>
       Realizado por Jean Oviedo
     </div>
   );
