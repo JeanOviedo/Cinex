@@ -1,38 +1,307 @@
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow-x: hidden;
+  background-color: #14213d;
+}
+
 .App {
+  background-color: #14213d;
+}
+
+.navbar {
+  padding: 1em;
+  background-color: #fca311;
+  width: 100%;
+  height: 80%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.menu {
+  display: flex;
+  width: 15%;
+
+  left: 170px;
+  top: -40px;
+ 
+}
+
+.menu li {
+  list-style: none;
+  margin: 0.3em;
+}
+
+.menu a {
+  color :#fff;
+  text-decoration: none;
+
+  font-weight: bold;
+  background-color: #1c2944;
+
+  transition: ease-in 0.3s;
+  font-weight: bold;
+  border-radius: 0.2em;
+  z-index: 2;
+  padding: 10px;
+}
+
+.menu .active {
+  color: #67696b;
+}
+
+.menu a:hover {
+  background-color: rgb(255, 255, 255);
+  color: #191c32;
+  transition: ease-in 0.3s;
+  font-weight: bold;
+  border-radius: 0.3em;
+  z-index: 2;
+  padding: 14px;
+}
+
+.fav {
+  background-color: #191c32;
+  width: 100%;
+  height: 100%;
+  padding: 1.2em;
+}
+
+.divres {
+  background-color: #14213d;
+  width: 100%;
+  height: 100%;
+}
+.res {
+  background-color: #191c32;
+  width: 100%;
+  height: 100%;
+  padding: 1.2em;
+}
+
+.container {
+  column-gap: 0px;
+  column-fill: auto;
+  margin-right: 7%;
+  align-items: center;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container h3 {
+  color: #fff;
+  font-size: 15px;
+  padding: 5px;
+}
+.card {
+  height: 300px;
+  width: 200px;
+  background-color: white;
+  border-radius: 7px;
+  color: #14213d;
+  padding: 0.5em;
+  display: inline-flex;
+  margin: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.card-image {
+  width: 162px;
+  height: 231px;
+}
+.card h3 {
+  font-size: 0.7em;
+  color: #191c32;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fav,
+.res h2 {
+  font-size: 2em;
+  background-color: #191c32;
+  color: #fff;
+  margin: 0 !important;
+  padding: 20px !important;
+}
+.fav ul {
+  padding: 0px;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+
+.imp {
+  display: inline;
+  padding: 1em;
+}
+.form input {
+  border: 1px;
+  color: #14213d;
+  border-radius: 8px;
+
+  height: 1.9em !important;
+  font-size: 1em;
+}
+
+.form select {
+  border: 1px;
+  color: #14213d;
+  border-radius: 8px;
+
+  height: 2em !important;
+  font-size: 1em;
+}
+.boton {
+  padding: 10px 10px;
+  background-color: #fca311;
+  border: none;
+  border-radius: 0.7em;
+  margin: 6px;
+  cursor: pointer;
+  color: #fff;
+  width: 70px;
+  height: 40px;
+  top: 22px;
+}
+
+.botonsearch {
+  padding: 10px 10px;
+  background-color: #fca311;
+  border: none;
+  border-radius: 0.7em;
+  margin: 6px;
+  cursor: pointer;
+  color: #fff;
+  width: 98px;
+  height: 33px;
+  top: 22px;
+}
+
+.botonsgt {
+  padding: 5px 5px;
+  background-color: #ffffff;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  color: #14213d;
+  margin: 2px;
+}
+
+.paginador {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* align-items por defecto tiene el valor `stretch` */
+  text-align: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding-left: 5px;
+  overflow: hidden;
+
+  z-index: 1;
+}
+
+.boton:hover {
+  background-color: rgb(241, 220, 99);
+  box-shadow: none;
+  color: #14213d;
+}
+
+.logo {
+  width: 14%;
+  position: relative;
+  left: 40px;
+  top: 2px;
+}
+
+.footer {
+  background-color: #14213d;
+  width: 100%;
   color: white;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media only screen and (max-width: 600px) {
+  .menu {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
   }
-  to {
-    transform: rotate(360deg);
+  .container {
+    column-gap: 0px;
+    column-fill: auto;
+    margin: 2%;
+  }
+
+  .logo {
+    width: 25%;
+    position: relative;
+    left: 36px;
+    top: 48px;
+  }
+  .res {
+    background-color: #191c32;
+    width: 100%;
+
+    height: 60% !important;
+  }
+
+  .footer {
+    background-color: #14213d;
+    width: 100%;
+    color: white;
+    padding: 10px;
+  }
+
+  .form input {
+    border: 1px;
+    width: 75%;
+    color: #14213d;
+    border-radius: 8px;
+    padding: 5px;
+    height: 2em !important;
+    font-size: 1em;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .boton {
+    margin-top: 15px;
+  }
+  .form select {
+    border: 1px;
+    color: #14213d;
+    border-radius: 8px;
+    padding: 1px;
+    width: 77%;
+    font-size: 1em;
+    height: 2em !important;
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .navbar {
+    padding: 0em;
+  }
+
+  .fav,
+  .res h2 {
+    top: 20px;
+    padding: 0px !important;
+  }
+  .card {
+    border: 1px solid black;
+    height: 420%;
+    margin-top: none;
+    width: 75%;
+    float: none;
+    background-color: white;
+    margin-left: none;
+    border-radius: 7px;
+    color: #14213d;
+    padding: 0.5em;
+    align-content: center;
+  }
+  .card-image {
+    width: 70%;
+    height: 70%;
+    padding: 1em;
+    align-items: center;
   }
 }
