@@ -1,7 +1,6 @@
 
 # Cinex 
-
-Una app Simple de peliculas y series utilizando Javascrip, Css, React, Redux con el api de omdbapi.
+Una app Simple de películas y series utilizando JavaScript, CSS, React, Redux con la API de omdbapI
 
 
 
