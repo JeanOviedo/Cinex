@@ -15,7 +15,7 @@ function App() {
     <React.Fragment>
       <Nav />
     
-      <Route exact path="/" component={Search} />
+      <Route exact path="/" ><Search/></Route>
       <Route path="/favoritos" component={Favoritos} />
       <Route path="/contacto" component={Contacto} />
       <Route path="/pelicula/:id" component={Pelicula} /> 
