@@ -1,12 +1,19 @@
-import React, { Component } from "react";
+import React, { Component, createRef } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import { ElBuscaPeliculas, ElAddFavoritos } from "../Redux/Actions.jsx";
+import {
+  ElBuscaPeliculas,
+  ElAddFavoritos,
+  ElVerificaFavoritos,
+} from "../Redux/Actions.jsx";
 let VariableOk = "";
+
 export class Search extends Component {
   constructor(props) {
     super(props);
+
+    this.botonfav = createRef();
     this.state = {
       title: "",
       year: "",
@@ -28,6 +35,10 @@ export class Search extends Component {
     this.setState({ page: event.target.value });
   }
 
+  handleChangeBoton(event) {
+    this.setState({ boton: event.target.value });
+  }
+
   handleSubmit(event) {
     event.preventDefault();
     this.props.ElBuscaPeliculas(
@@ -35,6 +46,7 @@ export class Search extends Component {
       this.state.type,
       this.state.year
     );
+
     this.state.page = 1;
     this.state.page = parseInt(this.state.page);
     VariableOk = "SI";
@@ -89,11 +101,11 @@ export class Search extends Component {
     const { title } = this.state;
     const { year } = this.state.year;
     const { page } = this.state.page;
-
+    {
+      console.log("ssssssss", this.botonfav.id);
+    }
     return (
       <div className="res">
-        {""}
-
         <center>
           <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
             <div className="imp">
@@ -147,6 +159,7 @@ export class Search extends Component {
             ) : (
               ""
             )}
+
             <ul>
               {this.props.pelicula ? (
                 this.props.pelicula.map((pelicula) => {
@@ -170,19 +183,29 @@ export class Search extends Component {
                               alt="..."
                             />
                           )}
-                          <button
-                            className="boton"
-                            onClick={() => this.props.ElAddFavoritos(pelicula)}
-                          >
-                            Favorita
-                          </button>{" "}
+
+                          {pelicula.imdbID != this.botonfav.id ? (
+                            <button
+                              className="boton"
+                              ref={pelicula.imdbID}
+                              name="botoncito"
+                              id={pelicula.imdbID}
+                              onClick={() =>
+                                this.props.ElAddFavoritos(pelicula)
+                              }
+                            >
+                              {this.props.boton}
+                            </button>
+                          ) : (
+                            ""
+                          )}
                           <button className="boton">Detalles</button>
                         </center>
                       </div>
                     </div>
                   );
                 })
-              ) : title === "" ? (
+              ) : title === "" || title == null || title == undefined ? (
                 <center>
                   <h2>Sin resultados, el campo nombre esta vacío</h2>
                 </center>
@@ -197,7 +220,6 @@ export class Search extends Component {
             </ul>
           </div>
         </div>
-
         {/* INICIO PAGINACION */}
         {}
         {this.state.page >= 1 &&
@@ -277,25 +299,29 @@ export class Search extends Component {
         ) : (
           ""
         )}
-
         {/* FIN DE PAGINACIO */}
       </div>
     );
   }
 }
 
-function mapStateToProps({ todas, cantidaddepelis }) {
+function mapStateToProps({ todas, cantidaddepelis, todasfavoritas, boton }) {
   return {
     pelicula: todas,
     totales: cantidaddepelis,
+    fav: todasfavoritas,
+    boton: boton,
   };
 }
+
 function mapDispatchToProps(dispatch) {
   return {
     ElBuscaPeliculas: (titulo, type, year, page) =>
       dispatch(ElBuscaPeliculas(titulo, type, year, page)),
 
-    ElAddFavoritos: (pelicula) => dispatch(ElAddFavoritos(pelicula)),
+    ElAddFavoritos: (pelicula) => dispatch(ElAddFavoritos(pelicula, true)),
+
+    ElVerificaFavoritos: (pelicula) => dispatch(ElVerificaFavoritos(pelicula)),
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

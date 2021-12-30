@@ -2,7 +2,8 @@ export const BUSCAR_PELICULAS = "BUSCAR_PELICULAS";
 export const AGREGAR_A_FAVORITOS = "AGREGAR_A_FAVORITOS";
 export const TOTAL_PELICULAS = "TOTAL_PELICULAS";
 export const ELIMINAR_FAVORITA = "ELIMINAR_FAVORITA";
-
+export const VERIFICA_FAVORITO = "VERIFICA_FAVORITO";
+export const BOTON_FAVORITO = "BOTON_FAVORITO";
 const apiKey = "150a106";
 
 const peliencontrada = (infodelaspeliculas) => {
@@ -55,10 +56,20 @@ export const ElBuscaPeliculas = (titulo, type, year, page) => {
   };
 };
 
-export const ElAddFavoritos = (id) => {
+export const ElAddFavoritos = (id, fav, boton) => {
   return {
     type: AGREGAR_A_FAVORITOS,
+
     payload: id,
+    favo: fav,
+    boton: boton,
+  };
+};
+
+export const ElVerificaFavoritos = (imdbID) => {
+  return {
+    type: VERIFICA_FAVORITO,
+    payload: imdbID,
   };
 };
 

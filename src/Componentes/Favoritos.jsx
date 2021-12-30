@@ -16,8 +16,6 @@ export class Favoritos extends Component {
           {this.props.pelicula != "" ? (
             this.props.pelicula.map((pelicula) => {
               return (
-                /* Aqui tienes que escribir tu codigo para mostrar la lista de peliculas */
-
                 <div className="card" key={Math.random(5)}>
                   <div>
                     <center>
@@ -37,7 +35,7 @@ export class Favoritos extends Component {
                       )}
                       <button
                         className="boton"
-                        onClick={() => this.props.ElEliminaFavoritos(pelicula)}
+                        onClick={() => this.props.ElEliminaFavoritos(pelicula.imdbID)}
                       >
                         Eliminar
                       </button>{" "}

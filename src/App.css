@@ -25,6 +25,10 @@ body {
   top: -40px;
 }
 
+.jeanoviedo {
+  height: 30%;
+  width: 30%;
+}
 .menu li {
   list-style: none;
   margin: 0.3em;
@@ -216,7 +220,7 @@ body {
   background-color: #14213d;
   width: 100%;
   color: white;
-  padding: 10px;
+  padding: 45px;
 }
 
 @media only screen and (max-width: 600px) {
