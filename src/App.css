@@ -78,6 +78,10 @@ body {
   padding: 1.2em;
 }
 
+.res h4 { 
+  color :#fca311;
+  font-size: 18px;
+}
 .container {
   column-gap: 0px;
   column-fill: auto;
