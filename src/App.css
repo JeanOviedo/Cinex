@@ -23,7 +23,6 @@ body {
 
   left: 170px;
   top: -40px;
- 
 }
 
 .menu li {
@@ -32,7 +31,7 @@ body {
 }
 
 .menu a {
-  color :#fff;
+  color: #fff;
   text-decoration: none;
 
   font-weight: bold;
@@ -78,8 +77,8 @@ body {
   padding: 1.2em;
 }
 
-.res h4 { 
-  color :#fca311;
+.res h4 {
+  color: #fca311;
   font-size: 18px;
 }
 .container {
@@ -230,7 +229,6 @@ body {
   .container {
     column-gap: 0px;
     column-fill: auto;
-    margin: 2%;
   }
 
   .logo {
@@ -250,7 +248,7 @@ body {
     background-color: #14213d;
     width: 100%;
     color: white;
-    padding: 10px;
+    padding: 5px;
   }
 
   .form input {
@@ -290,7 +288,7 @@ body {
     padding: 0px !important;
   }
   .card {
-    border: 1px solid black;
+    border: 0px solid black;
     height: 420%;
     margin-top: none;
     width: 75%;
@@ -299,8 +297,9 @@ body {
     margin-left: none;
     border-radius: 7px;
     color: #14213d;
-    padding: 0.5em;
+    padding: 0.2em;
     align-content: center;
+    text-align: center;
   }
   .card-image {
     width: 70%;
