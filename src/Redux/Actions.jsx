@@ -4,6 +4,7 @@ export const TOTAL_PELICULAS = "TOTAL_PELICULAS";
 export const ELIMINAR_FAVORITA = "ELIMINAR_FAVORITA";
 export const VERIFICA_FAVORITO = "VERIFICA_FAVORITO";
 export const BOTON_FAVORITO = "BOTON_FAVORITO";
+export const DETALLE_DE_PELICULA = "DETALLE_DE_PELICULA";
 const apiKey = "150a106";
 
 const peliencontrada = (infodelaspeliculas) => {
@@ -56,6 +57,34 @@ export const ElBuscaPeliculas = (titulo, type, year, page) => {
   };
 };
 
+
+
+export const ElMuestraPelicula= (id) => {
+  return (dispatch) => {
+    return fetch(
+      `https://www.omdbapi.com/?apiKey=${apiKey}&i=${id}`
+    )
+      .then((respuesta) => respuesta.json())
+
+      .then((respuestajson) => {
+        console.log(id);
+
+        console.log("dddddjean", respuestajson.totalResults);
+        dispatch(peliencontrada(respuestajson.Search));
+        dispatch(pelitotal(respuestajson.totalResults));
+        // dispatch(peliencontrada(respuestajson.totalResults));
+      })
+      .catch((err) => {
+        //throw new Error(error);
+        console.log(err);
+      });
+  };
+};
+
+
+
+
+
 export const ElAddFavoritos = (id, fav, boton) => {
   return {
     type: AGREGAR_A_FAVORITOS,
@@ -63,6 +92,15 @@ export const ElAddFavoritos = (id, fav, boton) => {
     payload: id,
     favo: fav,
     boton: boton,
+  };
+};
+
+
+
+export const DetalledePelicula = (imdbID) => {
+  return {
+    type: DETALLE_DE_PELICULA,
+    payload: imdbID,
   };
 };
 

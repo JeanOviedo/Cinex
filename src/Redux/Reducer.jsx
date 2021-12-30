@@ -4,6 +4,7 @@ import {
   TOTAL_PELICULAS,
   VERIFICA_FAVORITO,
   ELIMINAR_FAVORITA,
+  DETALLE_DE_PELICULA,
 } from "./Actions";
 
 const initialState = {
@@ -20,6 +21,9 @@ export default function rooReducer(state = initialState, action) {
       return { ...state, todas: action.payload };
 
     case TOTAL_PELICULAS:
+      return { ...state, cantidaddepelis: action.payload };
+
+    case DETALLE_DE_PELICULA:
       return { ...state, cantidaddepelis: action.payload };
 
     case ELIMINAR_FAVORITA:

@@ -16,11 +16,11 @@ export default function Nav() {
           </li>
           <li>
             {" "}
-            <Link to="favoritos">Favoritas</Link>
+            <Link to="../favoritos">Favoritas</Link>
           </li>
           <li>
             {" "}
-            <Link to="contacto">Contacto</Link>
+            <Link to="../contacto">Contacto</Link>
           </li>
         </ul>
       </nav>

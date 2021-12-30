@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 // import { connect } from "react-redux";
-// import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { ElEliminaFavoritos } from "../Redux/Actions.jsx";
+import Sad from "../../src/load.png";
 export class Favoritos extends Component {
   render() {
     return (
@@ -35,19 +36,24 @@ export class Favoritos extends Component {
                       )}
                       <button
                         className="boton"
-                        onClick={() => this.props.ElEliminaFavoritos(pelicula.imdbID)}
+                        onClick={() =>
+                          this.props.ElEliminaFavoritos(pelicula.imdbID)
+                        }
                       >
                         Eliminar
                       </button>{" "}
-                      <button className="boton">Detalles</button>
+                      <Link to={`/pelicula/${pelicula.imdbID}`}>
+                        <button className="boton">Detalles</button>
+                      </Link>
                     </center>
                   </div>
                 </div>
               );
             })
           ) : (
-            <center>
-              <h4>No tienes Peliculas Favoritas :(</h4>
+            <center> 
+              <img src={Sad} alt="Sad" className="jeanoviedo" /> <h4>No tienes Peliculas Favoritas</h4>
+            
             </center>
           )}
         </ul>

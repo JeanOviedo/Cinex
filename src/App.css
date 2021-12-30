@@ -26,8 +26,15 @@ body {
 }
 
 .jeanoviedo {
-  height: 30%;
+  height: 50%;
   width: 30%;
+}
+
+.ico {
+  width: 50px;
+  height: 50px;
+  margin: 7px;
+  cursor: pointer;
 }
 .menu li {
   list-style: none;
@@ -104,14 +111,18 @@ body {
   background-color: white;
   border-radius: 7px;
   color: #14213d;
-  padding: 0.5em;
+  padding-top: 2em;
   display: inline-flex;
-  margin: 30px;
+  margin: 20px;
+  text-align: center;
+  align-items: center;
 }
 
 .card-image {
-  width: 162px;
-  height: 231px;
+  width: 170px;
+  height: 235px;
+  margin: 0px;
+  text-align: center;
 }
 .card h3 {
   font-size: 0.7em;
@@ -167,6 +178,7 @@ body {
   width: 70px;
   height: 40px;
   top: 22px;
+  z-index: 1;
 }
 
 .botonsearch {
@@ -220,7 +232,8 @@ body {
   background-color: #14213d;
   width: 100%;
   color: white;
-  padding: 45px;
+  padding: 20px;
+  margin: 0px;
 }
 
 @media only screen and (max-width: 600px) {

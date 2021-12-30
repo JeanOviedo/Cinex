@@ -199,7 +199,9 @@ export class Search extends Component {
                           ) : (
                             ""
                           )}
-                          <button className="boton">Detalles</button>
+                          <Link to={`/pelicula/${pelicula.imdbID}`}>
+                            <button className="boton">Detalles</button>
+                          </Link>
                         </center>
                       </div>
                     </div>
