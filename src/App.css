@@ -332,7 +332,11 @@ body {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 55%;
+  }
+
+  .menu a {
+    font-size: 12px;
   }
   .container {
     column-gap: 0px;
@@ -416,7 +420,7 @@ body {
     border: 0px solid black;
     height: 420%;
     margin-top: none;
-    width: 75%;
+    width: 85%;
     float: none;
     background-color: white;
     margin-left: none;
