@@ -10,7 +10,7 @@ export default function Nav() {
         <img id="logo" src={Logo} className="logo" alt="" />{" "}
       </div>
       <nav>
-        <ul class="menu">
+        <ul className="menu">
           <li>
             <Link to="/">Inicio</Link>
           </li>

@@ -1,11 +1,13 @@
 import React, { Component, createRef } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-
+import { Modal } from "./Modal.jsx";
+import { ModalNo } from "./ModalNo.jsx";
 import {
   ElBuscaPeliculas,
   ElAddFavoritos,
   ElVerificaFavoritos,
+  ElCierra,
 } from "../Redux/Actions.jsx";
 let VariableOk = "";
 
@@ -22,6 +24,8 @@ export class Search extends Component {
     };
   }
 
+  // this.showModal()
+
   handleChange(event) {
     this.setState({ title: event.target.value });
   }
@@ -35,9 +39,7 @@ export class Search extends Component {
     this.setState({ page: event.target.value });
   }
 
-  handleChangeBoton(event) {
-    this.setState({ boton: event.target.value });
-  }
+  
 
   handleSubmit(event) {
     event.preventDefault();
@@ -101,11 +103,33 @@ export class Search extends Component {
     const { title } = this.state;
     const { year } = this.state.year;
     const { page } = this.state.page;
-    {
-      console.log("ssssssss", this.botonfav.id);
-    }
+
     return (
       <div className="res">
+        <>
+          {this.props.modal == true ? (
+            <button
+              className="botonclose"
+             
+              onClick={() => this.props.ElCierra(false)}
+            >
+              X
+            </button>
+          ) : (
+            ""
+          )}
+          {this.props.modalno == true ? (
+            <button
+              className="botonclose"
+             
+              onClick={() => this.props.ElCierra(false)}
+            >
+              X
+            </button>
+          ) : (
+            ""
+          )}
+        </>
         <center>
           <form className="form" onSubmit={(e) => this.handleSubmit(e)}>
             <div className="imp">
@@ -161,11 +185,17 @@ export class Search extends Component {
             )}
 
             <ul>
+              <Modal
+                show={this.props.modal}
+                onChange={(event) => this.handleChangeModal(event)}
+              />
+              <ModalNo
+                show={this.props.modalno}
+                onChange={(event) => this.handleChangeModalNo(event)}
+              />
               {this.props.pelicula ? (
                 this.props.pelicula.map((pelicula) => {
                   return (
-                    /* Aqui tienes que escribir tu codigo para mostrar la lista de peliculas */
-
                     <div className="card" key={Math.random(5)}>
                       <div>
                         <center>
@@ -194,7 +224,7 @@ export class Search extends Component {
                                 this.props.ElAddFavoritos(pelicula)
                               }
                             >
-                              {this.props.boton}
+                              Favorito
                             </button>
                           ) : (
                             ""
@@ -306,13 +336,22 @@ export class Search extends Component {
     );
   }
 }
-
-function mapStateToProps({ todas, cantidaddepelis, todasfavoritas, boton }) {
+//modal y modalno se deja igual que boton  y botonno ya que siempre tendran el mismo estado
+function mapStateToProps({
+  todas,
+  cantidaddepelis,
+  todasfavoritas,
+  modal,
+  modalno,
+}) {
   return {
     pelicula: todas,
     totales: cantidaddepelis,
     fav: todasfavoritas,
-    boton: boton,
+    modal: modal,
+    boton: modal,
+    modalno: modalno,
+    botono: modalno,
   };
 }
 
@@ -321,9 +360,9 @@ function mapDispatchToProps(dispatch) {
     ElBuscaPeliculas: (titulo, type, year, page) =>
       dispatch(ElBuscaPeliculas(titulo, type, year, page)),
 
-    ElAddFavoritos: (pelicula) => dispatch(ElAddFavoritos(pelicula, true)),
-
+    ElAddFavoritos: (pelicula) => dispatch(ElAddFavoritos(pelicula)),
     ElVerificaFavoritos: (pelicula) => dispatch(ElVerificaFavoritos(pelicula)),
+    ElCierra: (modal) => dispatch(ElCierra(modal)),
   };
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Search);
