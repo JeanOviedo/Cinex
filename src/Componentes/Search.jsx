@@ -39,8 +39,6 @@ export class Search extends Component {
     this.setState({ page: event.target.value });
   }
 
-  
-
   handleSubmit(event) {
     event.preventDefault();
     this.props.ElBuscaPeliculas(
@@ -110,7 +108,6 @@ export class Search extends Component {
           {this.props.modal == true ? (
             <button
               className="botonclose"
-             
               onClick={() => this.props.ElCierra(false)}
             >
               X
@@ -121,7 +118,6 @@ export class Search extends Component {
           {this.props.modalno == true ? (
             <button
               className="botonclose"
-             
               onClick={() => this.props.ElCierra(false)}
             >
               X

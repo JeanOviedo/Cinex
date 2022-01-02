@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import Nav from "./Componentes/Nav";
 import Favoritos from "./Componentes/Favoritos";
@@ -14,18 +14,21 @@ function App() {
   return (
     <React.Fragment>
       <Nav />
+      <Switch>
+        <Route exact path="/">
+          <Search />
+        </Route>
 
-      <Route exact path="/">
-        <Search />
-      </Route>
-      <Route path="/favoritos">
-        <Favoritos />
-      </Route>
+        <Route exact path="/favoritos">
+          <Favoritos />
+        </Route>
 
-      <Route path="/contacto">
-        <Contacto />
-      </Route>
-      <Route path="/pelicula/:id" component={Pelicula} />
+        <Route exact path="/contacto">
+          <Contacto />
+        </Route>
+        <Route path="/pelicula/:id" component={Pelicula} />
+      </Switch>
+
       <Footer />
     </React.Fragment>
   );
