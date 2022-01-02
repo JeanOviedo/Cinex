@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Cinex/static/css/main.6bb60f9f.css",
-    "main.js": "/Cinex/static/js/main.5f4c04b5.js",
+    "main.js": "/Cinex/static/js/main.72ecfa7f.js",
     "static/js/787.565ccd26.chunk.js": "/Cinex/static/js/787.565ccd26.chunk.js",
     "static/media/img-opacity50.png": "/Cinex/static/media/img-opacity50.f3c4d104e553ac49082c.png",
     "static/media/logo.png": "/Cinex/static/media/logo.0560404ddb55e108ba1f.png",
@@ -9,11 +9,11 @@
     "static/media/load.png": "/Cinex/static/media/load.79085767e3a7d49a2a3c.png",
     "index.html": "/Cinex/index.html",
     "main.6bb60f9f.css.map": "/Cinex/static/css/main.6bb60f9f.css.map",
-    "main.5f4c04b5.js.map": "/Cinex/static/js/main.5f4c04b5.js.map",
+    "main.72ecfa7f.js.map": "/Cinex/static/js/main.72ecfa7f.js.map",
     "787.565ccd26.chunk.js.map": "/Cinex/static/js/787.565ccd26.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6bb60f9f.css",
-    "static/js/main.5f4c04b5.js"
+    "static/js/main.72ecfa7f.js"
   ]
 }
