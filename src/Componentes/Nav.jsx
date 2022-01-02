@@ -12,7 +12,7 @@ export default function Nav() {
       <nav>
         <ul className="menu">
           <li>
-            <Link to="/">Inicio</Link>
+            <Link to="/">Buscar</Link>
           </li>
           <li>
             {" "}
