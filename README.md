@@ -4,7 +4,7 @@ Una app Simple de películas y series utilizando JavaScript, CSS, React, Redux c
 
 ## Demo
 
-[https://Proximamente]
+[jeanoviedo.github.io/cinex/]
 
 ## Features
 
