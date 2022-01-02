@@ -8,7 +8,6 @@ import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 
 import store from "./Redux/Store.jsx";
-import Footer from "./Componentes/Footer";
 
 ReactDOM.render(
   <Provider store={store}>

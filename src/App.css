@@ -332,7 +332,7 @@ body {
     display: flex;
     margin-left: auto;
     margin-right: auto;
-    width: 55%;
+    width: 50%;
   }
 
   .menu a {
@@ -341,6 +341,7 @@ body {
   .container {
     column-gap: 0px;
     column-fill: auto;
+    overflow: hidden;
   }
 
   .logo {
@@ -354,6 +355,7 @@ body {
     width: 100%;
 
     height: 60% !important;
+    overflow: hidden;
   }
 
   .footer {
@@ -361,6 +363,7 @@ body {
     width: 100%;
     color: white;
     padding: 15px;
+    overflow: hidden;
   }
 
   .form input {
@@ -388,10 +391,17 @@ body {
     height: 2em !important;
     display: flex;
     flex-direction: row-reverse;
+    overflow: hidden;
   }
 
   .navbar {
     padding: 0em;
+    padding: 1em;
+    background-color: #fca311;
+    width: 100%;
+    height: 70%;
+    z-index: 1;
+    overflow: hidden;
   }
 
   .fav,
