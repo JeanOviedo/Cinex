@@ -14,7 +14,7 @@ body {
   width: 100%;
   height: 80%;
   z-index: 1;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .menu {
@@ -342,6 +342,7 @@ body {
     column-gap: 0px;
     column-fill: auto;
     overflow: hidden;
+    margin: 0px;
   }
 
   .logo {
@@ -352,18 +353,17 @@ body {
   }
   .res {
     background-color: #191c32;
-    width: 100%;
+    width: 97%;
 
     height: 60% !important;
-    overflow: hidden;
+    overflow-x: hidden;
   }
 
   .footer {
     background-color: #14213d;
-    width: 100%;
+    width: 80%;
     color: white;
-    padding: 15px;
-    overflow: hidden;
+    padding: 25px;
   }
 
   .form input {
