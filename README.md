@@ -8,7 +8,7 @@ Una app Simple de películas y series utilizando JavaScript, CSS, React, Redux c
 
 ## Features
 
-- Agregada la opción de añadir a favoritos
+- Ajustadas las rutas
 
 ## Using Technologies
 
