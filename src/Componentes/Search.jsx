@@ -180,6 +180,7 @@ export class Search extends Component {
               ""
             )}
 
+            {this.props.pelicula == "" ? <h3>Cargando resultados...</h3> : ""}
             <ul>
               <Modal
                 show={this.props.modal}
