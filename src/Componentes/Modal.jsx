@@ -18,9 +18,9 @@ export class Modal extends Component {
               // onClick={() => this.setState({ show: false })}
               onClick={() => this.props.ElCierra(false)}
               //onClick={() => this.props.ElCierraModal(false)}
-            >
+            > 
               Cerrar
-            </button> */}
+            </button>*/}
           </center>
         </div>
       );
@@ -30,9 +30,9 @@ export class Modal extends Component {
   }
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ modal }) {
   return {
-    modal: state.modal,
+    modal: modal,
   };
 }
 function mapDispatchToProps(dispatch) {
