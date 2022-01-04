@@ -18,8 +18,7 @@ export class Pelicula extends Component {
 
     return (
       <div className="res2">
-        {this.props.pelicula.Title == undefined &&
-        this.props.pelicula.Year == undefined ? (
+        {this.props.pelicula == "" ? (
           <center>
             <h3>Cargando datos...</h3>
           </center>
